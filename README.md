@@ -1,19 +1,19 @@
-# TourFinder
+# TourFinder Chat Backend
 
-Bienvenido a TourFinder, tu aplicación de referencia para encontrar guías locales en todo el mundo. Este proyecto es el componente frontend de la aplicación TourFinder, diseñado para conectar a turistas con guías locales que ofrecen tours y servicios personalizados.
+Este repositorio contiene el backend del servicio de chat para la aplicación TourFinder, implementado como un microservicio separado del backend principal. Este servicio está desarrollado en TypeScript y utiliza Node.js y WebSockets para gestionar comunicaciones en tiempo real entre usuarios.
 
 ## Comenzando
 
 ### Prerrequisitos
 
-Antes de comenzar, asegúrate de tener Node.js instalado en tu máquina. Si no lo tienes, puedes descargarlo desde el [sitio oficial de Node.js](https://nodejs.org/).
+Antes de comenzar, es necesario tener Node.js instalado, ya que es esencial para ejecutar un entorno de desarrollo TypeScript. Puedes instalar Node.js desde el [sitio oficial de Node.js](https://nodejs.org/).
 
 ### Instalación
 
 Clona el repositorio y navega al directorio del proyecto:
 
 ```bash
-git clone https://github.com/CBMaio/find-your-guide-react.git
+git clone https://github.com/gregoriocarranza/findYourGuide-ChatTypescript.git
 cd find-your-guide-react
 ```
 
@@ -23,27 +23,34 @@ Instala las dependencias necesarias:
 npm install
 ```
 
-### Ejecutando la Aplicación
+### Compilación de TypeScript
 
-Para ejecutar la aplicación en modo de desarrollo:
+Antes de ejecutar el servidor, debes compilar los archivos TypeScript a JavaScript. Esto se puede hacer ejecutando:
 
 ```bash
-npm start
-
+npm run build
 ```
 
-Esto iniciará la aplicación frontend en [http://localhost:3000](http://localhost:3000). Asegúrate de que los servicios de backend estén ejecutándose en [http://localhost:8080](http://localhost:8080) para manejar las solicitudes de API. Si tu backend se está ejecutando en una URL diferente, actualiza la `API_URL` en el archivo `src/features/constants.js` según corresponda.
+Este comando compilará el código TypeScript en el directorio `dist`, listo para ser ejecutado.
+
+### Ejecutando el Servidor
+
+Para iniciar el servidor de chat en modo de desarrollo:
+
+```bash
+npm run start:dev
+```
+
+Esto lanzará el servidor de WebSocket y permitirá la comunicación en tiempo real entre los clientes conectados.
 
 ## Características
 
-TourFinder permite a los usuarios:
+El servidor de chat TourFinder soporta:
 
-- Registrarse como turista o guía utilizando correo electrónico/contraseña o servicios de terceros (Google, Apple ID, Facebook).
-- Gestionar perfiles, incluyendo la carga de fotos de perfil y especificando ubicaciones de servicio para los guías.
-- Agregar o eliminar servicios como tours individuales, tours grupales y servicios de traducción (solo guías).
-- Buscar guías basado en ubicación, idiomas hablados y servicios ofrecidos.
-- Ver perfiles detallados de los guías incluyendo credenciales, viajes pasados, reseñas y calificaciones.
-- Reservar guías con verificaciones de disponibilidad en tiempo real y gestionar reservas a través de la aplicación.
+- Conexiones en tiempo real entre clientes utilizando WebSockets.
+- Gestión de múltiples usuarios y sesiones simultáneas.
+- Envío y recepción de mensajes de forma instantánea.
+- Integración con el sistema principal de TourFinder para autenticación y manejo de usuarios.
 
 ## Recursos Adicionales
 
@@ -53,7 +60,7 @@ TourFinder permite a los usuarios:
 
 ## Contribuyendo
 
-¡Invitamos contribuciones a TourFinder! Por favor lee nuestras directrices de contribución y envía pull requests a nuestro repositorio.
+Si estás interesado en contribuir al desarrollo del backend del chat para TourFinder, por favor revisa las directrices de contribución y envía tus pull requests al repositorio.
 
 ## Licencia
 
