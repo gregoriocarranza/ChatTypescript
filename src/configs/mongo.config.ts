@@ -9,7 +9,9 @@ export class MongoConfiguration {
     }
     connect(DB_URI)
       .then(() => {
-        console.info(`Mongodb cluster connected`);
+        console.info(
+          `Mongodb cluster connected for ${process.env.ENVIRONMENT}`
+        );
       })
       .catch((err) => {
         throw new Error(err);
